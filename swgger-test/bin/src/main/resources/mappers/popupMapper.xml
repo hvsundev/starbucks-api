@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.nuri.todo.mapper.PopupMapper">
+
+	<select id="getNoticeList" resultType="com.nuri.todo.dto.NoticeVO">
+		SELECT * FROM notice_info;
+	</select>
+	
+	<select id="getNoticeContents" parameterType="String" resultType="com.nuri.todo.dto.NoticeVO">
+		SELECT * FROM notice_info WHERE idx=#{idx};
+	</select>
+    
+</mapper>

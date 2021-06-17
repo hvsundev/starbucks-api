@@ -9,4 +9,7 @@ public class NoticeVO {
 	private String contents;
 	private String regdate;
 	private String lastdate;
+	private String img;
+	private String url;
+	private String type;
 }
