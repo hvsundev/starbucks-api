@@ -10,4 +10,5 @@ import com.nuri.todo.dto.NoticeVO;
 public interface PopupMapper {
 	public List<NoticeVO> getNoticeList();
 	public NoticeVO getNoticeContents(String idx);
+	public List<NoticeVO> getScrollNoticeList();
 }

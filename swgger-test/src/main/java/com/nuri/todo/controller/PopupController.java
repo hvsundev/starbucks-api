@@ -47,11 +47,12 @@ public class PopupController {
 		return gson.toJson(noticeInfo);
 	}
 	
-	@ApiOperation(value = "메인화면 내용 가져오기")
+	@ApiOperation(value="메인화면의 스크롤뷰 콘텐츠 가져오기")
 	@RequestMapping(value="/main/contents", method = RequestMethod.GET)
 	@ResponseBody
 	public String getMainContents() {
-		// 전체
-		return "";
+		List<NoticeVO> list = popupService.getScrollNoticeList();
+		System.out.println(list);
+		return gson.toJson(list);
 	}
 }

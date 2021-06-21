@@ -23,4 +23,10 @@ public class PopupServiceImpl implements PopupService {
 	public NoticeVO getNoticeContents(String idx) {
 		return popupMapper.getNoticeContents(idx);
 	}
+
+	@Override
+	public List<NoticeVO> getScrollNoticeList() {
+		return popupMapper.getScrollNoticeList();
+	}
+	
 }
