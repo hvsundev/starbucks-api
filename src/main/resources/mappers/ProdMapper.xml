@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.starbucks.port.mapper.ProdMapper">
+
+	<select id="getMenuInfo" parameterType="String" resultType="com.starbucks.port.dto.ProdVO">
+		SELECT * FROM product WHERE prod_code=#{prod_code};
+	</select>
+	
+	<select id="getTotalMenulist" parameterType="String" resultType="com.starbucks.port.dto.ProdVO">
+		SELECT * FROM product WHERE ctg_code=#{ctg_code};
+	</select>
+	
+	<!-- filter: 1(이름순), 2(인기순), 3(낮은가격순), 4(높은가격순) -->
+	<select id="getMenuByFilter" parameterType="int" resultType="com.starbucks.port.dto.ProdVO">
+		SELECT * FROM product
+			WHERE prod_code=#{prod_code} 
+			<choose>
+				<when test="filter == 1">ORDER BY prod_nm</when>
+				<when test="filter == 2"></when>
+				<when test="filter == 3">ORDER BY price</when>
+				<when test="filter == 4">ORDER BY price DESC</when>
+			</choose>
+	</select>
+	
+	<select id="getMenuByKeyword" parameterType="String" resultType="com.starbucks.port.dto.ProdVO">
+		SELECT * FROM product WHERE prod_nm like CONCAT(*, #{keyword}, *);
+	</select>
+    
+</mapper>

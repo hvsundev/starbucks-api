@@ -1,4 +1,4 @@
-package com.nuri.todo.config;
+package com.starbucks.port.config;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -25,7 +25,7 @@ public class SwaggerConfig {
                 .produces(getProduceContentTypes())
                 .apiInfo(getApiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.nuri.todo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.starbucks.port.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -45,8 +45,8 @@ public class SwaggerConfig {
 
     private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
-                .title("TodoList & Swagger")
-                .description(":: Swagger example")
+                .title("Starbucks API")
+                .description(":: 서비스와 어드민 API")
                 .version("1.0")
                 .build();
     }

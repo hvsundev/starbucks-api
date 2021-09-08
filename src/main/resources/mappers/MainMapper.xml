@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.starbucks.port.mapper.MainMapper">
+
+	<select id="getMenuOfMain" parameterType="String" resultType="String">
+		SELECT kr_name FROM category_store WHERE code=#{code};
+	</select>
+	
+	<select id="getLayoutInfo" resultType="com.starbucks.port.dto.LayoutVO">
+		SELECT * FROM layout_info;
+	</select>
+    
+</mapper>

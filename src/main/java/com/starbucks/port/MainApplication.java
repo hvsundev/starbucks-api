@@ -1,4 +1,4 @@
-package com.nuri.todo;
+package com.starbucks.port;
 
 import javax.sql.DataSource;
 
@@ -11,10 +11,10 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @SpringBootApplication
-public class SwggerTestApplication {
+public class MainApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SwggerTestApplication.class, args);
+		SpringApplication.run(MainApplication.class, args);
 	}
 
 	@Bean
